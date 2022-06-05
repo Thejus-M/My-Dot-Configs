@@ -35,3 +35,13 @@ set number
 filetype plugin indent on
 colorscheme ayu
 let g:dashboard_default_executive  ='fzf'
+			
+
+" nerdtree shortcuts
+nnoremap <leader>n :NERDTreeFocus<CR>
+" nnoremap <C-k> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
+" terminal
+nnoremap <C-S-y> :Term<CR>
