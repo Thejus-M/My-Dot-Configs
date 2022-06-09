@@ -2,7 +2,9 @@
 call plug#begin('~/local/share/nvim/plugged')
 
 	Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-	Plug 'preservim/nerdtree', { 'on':  'NERDTreeToggle' }
+	Plug 'preservim/nerdtree', { 'on':  'NERDTreeToggle' } |
+            \ Plug 'Xuyuanp/nerdtree-git-plugin'
+	Plug 'ryanoasis/vim-devicons'
 	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 	Plug 'junegunn/fzf.vim'
 	Plug 'glepnir/dashboard-nvim'
@@ -13,17 +15,14 @@ call plug#begin('~/local/share/nvim/plugged')
 	Plug 'tpope/vim-surround'
 	Plug 'ayu-theme/ayu-vim'
 	Plug 'dracula/vim', { 'as': 'dracula' }
-	" Plug 'drewtempelmeyer/palenight.vim'
-	" Plug 'sonph/onehalf', { 'rtp': 'vim' }
 	Plug 'vimlab/split-term.vim'
-        " Plug 'rstacruz/vim-closer'
-	" Plug 'roxma/nvim-completion-manager'
 	Plug 'SirVer/ultisnips'
 	Plug 'honza/vim-snippets'
 	Plug 'jiangmiao/auto-pairs'
 	Plug 'machakann/vim-sandwich'
 	Plug 'airblade/vim-gitgutter'
 	Plug 'tpope/vim-fugitive'
+	" Plug 'mktk1117/toggle_term.vim'
 
 
 call plug#end()
@@ -39,9 +38,16 @@ let g:dashboard_default_executive  ='fzf'
 
 " nerdtree shortcuts
 nnoremap <leader>n :NERDTreeFocus<CR>
-" nnoremap <C-k> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
 " terminal
-nnoremap <C-S-y> :Term<CR>
+nnoremap <C-y> :Term<CR>
+
+
+nnoremap <C-p> :call toggle_term#MonkeyTerminalToggle()<cr>
+" nnoremap <C-p> :call toggle_term#MonkeyTerminalToggle()<cr>
+
+
+
+set encoding=UTF-8
