@@ -22,8 +22,9 @@ call plug#begin('~/local/share/nvim/plugged')
 	Plug 'machakann/vim-sandwich'
 	Plug 'airblade/vim-gitgutter'
 	Plug 'tpope/vim-fugitive'
-	" Plug 'mktk1117/toggle_term.vim'
-
+	Plug 'frazrepo/vim-rainbow'
+	Plug 'tpope/vim-surround'
+	Plug 'dense-analysis/ale'
 
 call plug#end()
 
@@ -31,10 +32,11 @@ set termguicolors
 let ayucolor="dark"
 set splitbelow
 set number
+set spell
 filetype plugin indent on
 colorscheme ayu
 let g:dashboard_default_executive  ='fzf'
-			
+let g:rainbow_active = 1
 
 " nerdtree shortcuts
 nnoremap <leader>n :NERDTreeFocus<CR>
@@ -45,9 +47,13 @@ nnoremap <C-f> :NERDTreeFind<CR>
 nnoremap <C-y> :Term<CR>
 
 
-nnoremap <C-p> :call toggle_term#MonkeyTerminalToggle()<cr>
-" nnoremap <C-p> :call toggle_term#MonkeyTerminalToggle()<cr>
-
-
+nnoremap sh :!chmod +x % && source %
+nnoremap bs i#!/bin/bash/<ESC>o
 
 set encoding=UTF-8
+
+
+" Fix files with prettier, and then ESLint.
+let b:ale_fixers = ['prettier', 'eslint']
+" Equivalent to the above.
+let b:ale_fixers = {'javascript': ['prettier', 'eslint']}
