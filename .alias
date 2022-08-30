@@ -1,0 +1,51 @@
+alias vi="nvim"
+alias apt="nala"
+alias apt-get="nala"
+
+alias wallp="wallpaper-reddit"
+
+alias gstls='exa --long --git --icons'
+
+alias astudio="bash /home/pc/local/android-studio/bin/studio.sh"
+
+### alias iupdate="/home/pc/Downloads/Downloads/AppImage/appimage-cli-tool-0.1.4-x86_64.AppImage update /home/pc/Downloads/Downloads/AppImage/*.AppImage"
+alias iupdate="/home/pc/Applications/appimage-cli-tool*.AppImage update /home/pc/Applications/*.AppImage"
+#HISTCONTROL=ignoreboth
+HISTTIMEFORMAT="%Y-%m-%d %T"
+
+
+alias mysync="rsync -avr /home/pc/Applications /media/Backup/Downloads/AppImage;rsync -avr /home/pc/.alias /media/Backup/ENCRYPTED/Files\ backup/Terminal;rsync -avr /media/Backup/My\ PC/BACKUP/Backup /media/Backup/My\ PC/BACKUP/ENCRYPTED.backup;cp -rv /media/Backup/ENCRYPTED/Files\ backup/P@* /media/Backup/ENCRYPTED/Files\ backup/KeePass/$(date +%a%d%B%T)"
+
+
+
+
+alias start="update;mysync;exit "
+
+alias wallcp="cp /home/pc/Pictures/Wallpapers/wallpaper.jpg /home/pc/Pictures/Wallpaper/$RANDOM.jpg"
+
+alias wallpaper="wallpaper-reddit && cp /home/pc/Pictures/Wallpapers/wallpaper.jpg /home/pc/Pictures/Wallpaper/$RANDOM.jpg"
+
+alias g="git add -A . && git commit -m"
+
+alias i="sudo nala install"
+
+alias isnap="sudo snap install"
+
+alias ifl="flatpak install"
+
+alias speedtest="python3 speedtest-cli --bytes --share"
+
+alias update="sudo nala update && sudo nala list --upgradable;sudo nala upgrade;flatpak update "
+
+alias code="codium"
+
+# new command alias
+alias ls="exa --icons --classify"
+alias ll="exa -hl --icons --classify"
+alias la="exa -alh --icons --classify" 
+alias gstls="exa --long --git --icons --classify"
+alias l="exa --icons --classify"
+
+alias tree="exa --tree --icons --classify"
+alias cat="batcat"
+alias man="tldr"
